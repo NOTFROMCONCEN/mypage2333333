@@ -1,0 +1,11 @@
+/* CSS Variables */
+:root {
+  --bg: #0b0d10;
+  --panel: #111317;
+  --panel-soft: rgba(255, 255, 255, 0.03);
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 211, 77, 0.45);
+  --text: #e5e7eb;
+  --text-soft: #b4b4b8; /* Improved contrast ratio */
+  --accent: #ffd34d;
+}

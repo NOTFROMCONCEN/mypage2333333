@@ -1,0 +1,131 @@
+/* Layout styles */
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.page-bg,
+.page-rail {
+  pointer-events: none;
+  position: absolute;
+}
+
+.page-bg--radial {
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(255, 211, 77, 0.07), transparent 22%),
+    linear-gradient(135deg, #090a0d 0%, #121418 46%, #0a0b0e 100%);
+}
+
+.page-bg--grid {
+  inset: 0;
+  opacity: 0.07;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.page-rail--left {
+  inset-block: 0;
+  left: 6%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.page-rail--right {
+  inset-block: 0;
+  right: 8%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.site-container {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 16px 48px;
+}
+
+.section-spacing {
+  margin-top: 24px;
+}
+
+/* Grid layouts */
+.layout-two-col,
+.project-layout,
+.hero-grid,
+.contact-layout {
+  display: grid;
+  gap: 20px;
+}
+
+.stack-col,
+.timeline-list,
+.project-list,
+.info-list {
+  display: grid;
+  gap: 12px;
+}
+
+.mini-card-grid,
+.detail-grid,
+.link-grid,
+.stat-grid {
+  display: grid;
+  gap: 12px;
+}
+
+/* Responsive layouts */
+@media (min-width: 768px) {
+  .site-container {
+    padding: 16px 24px 56px;
+  }
+
+  .mini-card-grid,
+  .detail-grid,
+  .link-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .archive-grid {
+    grid-template-columns: 92px minmax(0, 1fr);
+  }
+
+  .timeline-card__inner {
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+    align-items: start;
+  }
+}
+
+@media (min-width: 1200px) {
+  .layout-two-col {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  .project-layout {
+    grid-template-columns: 0.88fr 1.12fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 0.92fr 1.08fr;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr auto;
+  }
+
+  .mini-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
