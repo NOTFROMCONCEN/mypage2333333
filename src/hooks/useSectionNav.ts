@@ -8,7 +8,7 @@ export function useSectionNav(ids: string[]) {
       ids.reduce((acc, id) => {
         acc[id] = createRef<HTMLElement>();
         return acc;
-      }, {} as Record<string, React.RefObject<HTMLElement | null>>),
+      }, {} as Record<string, React.RefObject<HTMLElement>>),
     [ids]
   );
 
